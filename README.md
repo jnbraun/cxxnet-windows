@@ -1,5 +1,5 @@
-Windows port of cxxnet
-======================
+Windows installation of cxxnet
+==============================
 
 Note: The original cxxnet can be found [here](https://github.com/antinucleon/cxxnet).
 
