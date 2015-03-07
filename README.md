@@ -7,6 +7,7 @@ Requirements in order to build the code:
 * MS Visual Studio 2013
 * CUDA toolkit 6.5
 * OpenCV
+
 Other dependencies like mshadow, OpenBLAS and zlib can be found in the directory ./extern
 
 MSVC solution file can be found in the directory ./prjvs2013
