@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cxxnet_win", "cxxnet_win.vcxproj", "{5FFE9B50-9ED6-4068-A0EB-A768F2386B6D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "im2bin", "..\im2bin\im2bin.vcxproj", "{DFFECC1A-4D66-4CF9-BE5F-139ECD3692F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5FFE9B50-9ED6-4068-A0EB-A768F2386B6D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5FFE9B50-9ED6-4068-A0EB-A768F2386B6D}.Debug|Win32.Build.0 = Debug|Win32
+		{5FFE9B50-9ED6-4068-A0EB-A768F2386B6D}.Release|Win32.ActiveCfg = Release|Win32
+		{5FFE9B50-9ED6-4068-A0EB-A768F2386B6D}.Release|Win32.Build.0 = Release|Win32
+		{DFFECC1A-4D66-4CF9-BE5F-139ECD3692F1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DFFECC1A-4D66-4CF9-BE5F-139ECD3692F1}.Debug|Win32.Build.0 = Debug|Win32
+		{DFFECC1A-4D66-4CF9-BE5F-139ECD3692F1}.Release|Win32.ActiveCfg = Release|Win32
+		{DFFECC1A-4D66-4CF9-BE5F-139ECD3692F1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

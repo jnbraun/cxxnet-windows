@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{5FFE9B50-9ED6-4068-A0EB-A768F2386B6D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>cxxnet_win</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;MSHADOW_USE_CBLAS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>D:\DEV\Kaggle\NationalDataScienceBowl\cxxnet-master\cxxnet-master\extern;D:\DEV\Kaggle\NationalDataScienceBowl\cxxnet-master\cxxnet-master\extern\OpenBLAS\include;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\include;D:\DEV\opencv\build\include;D:\DEV\opencv\sources\3rdparty\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v6.5\lib\Win32;D:\DEV\opencv\build\x86\vc12\lib;D:\DEV\opencv\build\x86\vc12\staticlib;D:\DEV\Kaggle\NationalDataScienceBowl\cxxnet-master\cxxnet-master\extern\OpenBLAS\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cuda.lib;cublas.lib;curand.lib;cudart.lib;cudart_static.lib;opencv_core2410d.lib;opencv_highgui2410d.lib;zlib.lib;libopenblas.dll.a;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <CudaCompile>
+      <Emulation>false</Emulation>
+    </CudaCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../../extern/mshadow;../../extern/OpenBLAS/include;D:\DEV\opencv\build\include;../../extern/zlib;%(AdditionalIncludeDirectories);$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>D:\DEV\opencv\build\x86\vc12\lib;D:\DEV\opencv\build\x86\vc12\staticlib;../../extern/OpenBLAS/lib;%(AdditionalLibraryDirectories);$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>cuda.lib;cublas.lib;curand.lib;cudart.lib;opencv_core2410.lib;opencv_highgui2410.lib;zlib.lib;libopenblas.dll.a;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMT.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\cxxnet\cxxnet_main.cpp" />
+    <ClCompile Include="..\..\cxxnet\io\cxxnet_data.cpp" />
+    <ClCompile Include="..\..\cxxnet\nnet\cxxnet_nnet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\cxxnet\core\cxxnet_core.h" />
+    <ClInclude Include="..\..\cxxnet\core\cxxnet_layer-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\core\cxxnet_op.h" />
+    <ClInclude Include="..\..\cxxnet\core\cxxnet_pairtest-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\core\cxxnet_updater-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\io\cxxnet_data.h" />
+    <ClInclude Include="..\..\cxxnet\io\cxxnet_iter_cifar-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\io\cxxnet_iter_img-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\io\cxxnet_iter_mnist-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\io\cxxnet_iter_proc-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\io\cxxnet_iter_spfeat-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\io\cxxnet_iter_thread_imbin-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\nnet\cxxnet_nnet-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\nnet\cxxnet_nnet.h" />
+    <ClInclude Include="..\..\cxxnet\plugin\cxxnet_caffe_adapter-inl.hpp" />
+    <ClInclude Include="..\..\cxxnet\utils\cxxnet_config.h" />
+    <ClInclude Include="..\..\cxxnet\utils\cxxnet_global_random.h" />
+    <ClInclude Include="..\..\cxxnet\utils\cxxnet_io_utils.h" />
+    <ClInclude Include="..\..\cxxnet\utils\cxxnet_metric.h" />
+    <ClInclude Include="..\..\cxxnet\utils\cxxnet_thread.h" />
+    <ClInclude Include="..\..\cxxnet\utils\cxxnet_thread_buffer.h" />
+    <ClInclude Include="..\..\cxxnet\utils\cxxnet_utils.h" />
+    <ClInclude Include="..\..\extern\mshadow\cuda\cuda_reduce.cuh" />
+    <ClInclude Include="..\..\extern\mshadow\cuda\tensor_gpu-inl.cuh">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\..\extern\mshadow\tensor.h" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_base.h" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_container.h" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_cpu-inl.hpp" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_expr.h" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_expr_engine-inl.hpp" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_expr_ext.h" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_gpu-inl.hpp" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_io.h" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_random.h" />
+    <ClInclude Include="..\..\extern\mshadow\tensor_sse-inl.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="..\..\cxxnet\nnet\cxxnet_nnet.cu">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </CudaCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 6.5.targets" />
+  </ImportGroup>
+</Project>
