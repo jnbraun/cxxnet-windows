@@ -1,7 +1,7 @@
 Windows installation of cxxnet
 ==============================
 
-## DEPRECATED: THIS VERSION CORRESPONDS TO AN OLD VERSION OF CXXNET
+## DEPRECATED: THIS VERSION CORRESPONDS TO AN EARLIER VERSION OF CXXNET
 
 Note: The original cxxnet can be found [here](https://github.com/antinucleon/cxxnet).
 
